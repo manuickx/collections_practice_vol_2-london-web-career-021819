@@ -27,6 +27,7 @@ def count_elements(array)
 end
 
 def merge_data(keys, data)
+<<<<<<< HEAD
 merged = []
   keys.each do |person|
   puts person
@@ -55,4 +56,21 @@ locations_hash = {}
       end 
     end
   end
+=======
+  merged = []
+  keys.each {|i| data.first.map {|k,v| if i.values[0] == k then merged << i.merge(v) end}}
+  merged
+end
+
+def find_cool(cool)
+  cool.select do |i|
+    i.any? {|k,v| v == "cool"}
+  end
+end
+
+def organize_schools(schools)
+    locations_hash = {}
+    schools.collect {|k,v| locations_hash[v[:location]] = []}
+    locations_hash.each {|k,v| schools.each {|k1,v1| if k == v1[:location] then v << k1  end}}
+>>>>>>> 6bf79365b28f603dd77308a3f9cd70dfa19d66de
 end
